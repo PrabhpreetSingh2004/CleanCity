@@ -1,0 +1,131 @@
+/* Global Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f1fef4;
+  color: #2e2e2e;
+}
+
+/* Hero Header */
+.hero {
+  background: linear-gradient(to right, #1b4332, #2d6a4f);
+  color: white;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.hero p {
+  font-size: 1.2rem;
+  opacity: 0.9;
+}
+
+/* Main Team Section */
+.team-section {
+  max-width: 1200px;
+  margin: auto;
+  padding: 50px 20px;
+}
+
+.team-category {
+  margin-bottom: 60px;
+}
+
+.team-category h2 {
+  color: #1b4332;
+  font-size: 2rem;
+  border-left: 6px solid #95d5b2;
+  padding-left: 15px;
+  margin-bottom: 25px;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 30px;
+}
+
+.team-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.team-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.team-card img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.team-card h3 {
+  margin: 15px 0 5px;
+  font-size: 1.2rem;
+  color: #081c15;
+}
+
+.team-card p {
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #444;
+}
+
+/* Footer */
+footer {
+  background-color: #2d6a4f;
+  color: white;
+  text-align: center;
+  padding: 20px 10px;
+  margin-top: 40px;
+}
+/* Contact Us Section */
+.contact-us {
+  background-color: #3d3e3d;
+  text-align: center;
+  padding: 40px 20px;
+  margin-top: 60px;
+  border-top: 3px solid #2d6a4f;
+}
+
+.contact-us h2 {
+  color: #21855b;
+  font-size: 2rem;
+  margin-bottom: 15px;
+}
+
+.contact-us p {
+  color: #21855b;
+  font-size: 1.1rem;
+  margin-bottom: 8px;
+}
+
+.contact-us .highlight {
+  font-weight: bold;
+  color: #2d6a4f;
+}
+
+.contact-us a {
+  color: #40916c;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.contact-us a:hover {
+  text-decoration: underline;
+}

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>E-Marketplace</title>
+  <link rel="stylesheet" href="EMarket.css" />
+</head>
+<body>
+  <header class="navbar">
+    <div class="logo">🛒 E-Market</div>
+    <input type="text" id="searchBar" placeholder="Search for items..." onkeyup="filterProducts()" />
+    <select id="locationSelector" onchange="filterProducts()">
+      <option value="">All Locations</option>
+      <option value="Chandigarh">Chandigarh</option>
+      <option value="Delhi">Delhi</option>
+      <option value="Mumbai">Mumbai</option>
+      <option value="Ludhiana">Ludhiana</option>
+    </select>
+    <button onclick="shuffleListings()">🔁 Refresh</button>
+  </header>
+
+  <div class="container">
+    <aside class="sidebar">
+      <h3>Filter by Category</h3>
+      <ul>
+        <li><input type="checkbox" value="Books" onchange="filterProducts()"> Books</li>
+        <li><input type="checkbox" value="Electronics" onchange="filterProducts()"> Electronics</li>
+        <li><input type="checkbox" value="Furniture" onchange="filterProducts()"> Furniture</li>
+        <li><input type="checkbox" value="Clothing" onchange="filterProducts()"> Clothing</li>
+      </ul>
+
+      <h3>Filter by Price</h3>
+      <ul>
+        <li><input type="radio" name="price" value="0-500" onchange="filterProducts()"> ₹0 – ₹500</li>
+        <li><input type="radio" name="price" value="501-1000" onchange="filterProducts()"> ₹501 – ₹1000</li>
+        <li><input type="radio" name="price" value="1001-2000" onchange="filterProducts()"> ₹1001 – ₹2000</li>
+        <li><input type="radio" name="price" value="2001-9999" onchange="filterProducts()"> ₹2001+</li>
+        <li><input type="radio" name="price" value="" onchange="filterProducts()" checked> All</li>
+      </ul>
+
+      <h3>Filter by Discount</h3>
+      <ul>
+        <li><input type="radio" name="discount" value="10" onchange="filterProducts()"> 10% or more</li>
+        <li><input type="radio" name="discount" value="20" onchange="filterProducts()"> 20% or more</li>
+        <li><input type="radio" name="discount" value="30" onchange="filterProducts()"> 30% or more</li>
+        <li><input type="radio" name="discount" value="" onchange="filterProducts()" checked> All</li>
+      </ul>
+    </aside>
+
+    <main class="main-grid" id="productGrid"></main>
+  </div>
+
+  <!-- Product Detail Modal -->
+  <div id="productModal" class="modal">
+    <div class="modal-content">
+      <span class="close-btn" onclick="closeModal()">×</span>
+      <div id="modalDetails"></div>
+    </div>
+  </div>
+
+  <script src="EMarket.js"></script>
+</body>
+</html>

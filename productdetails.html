@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Product Details</title>
+  <link rel="stylesheet" href="EMarket.css" />
+  <style>
+    .details-container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      background-color: white;
+      display: flex;
+      gap: 2rem;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    .details-container img {
+      width: 400px;
+      height: 300px;
+      object-fit: cover;
+      border-radius: 6px;
+    }
+    .info {
+      flex: 1;
+    }
+    .info h2 {
+      margin-bottom: 0.5rem;
+    }
+    .info p {
+      margin: 0.3rem 0;
+    }
+    .back-btn {
+      margin: 2rem;
+      display: inline-block;
+      padding: 0.6rem 1rem;
+      background-color: #232f3e;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <a class="back-btn" href="EMarket.html">← Back to Marketplace</a>
+  <div class="details-container" id="detailsBox">
+    <!-- JS injects product -->
+  </div>
+
+  <script>
+    const data = JSON.parse(localStorage.getItem("selectedProduct"));
+    const box = document.getElementById("detailsBox");
+
+    if (data) {
+      box.innerHTML = `
+        <img src="${data.img}" alt="${data.name}">
+        <div class="info">
+          <h2>${data.name}</h2>
+          <p><strong>Price:</strong> ${data.price}</p>
+          <p><strong>Location:</strong> ${data.location}</p>
+          <p><strong>Rating:</strong> ⭐ ${data.rating}</p>
+          <p><strong>Discount:</strong> ${data.discount}% Off</p>
+          <p><strong>Category:</strong> ${data.category}</p>
+          <p><strong>Description:</strong> This is a well-maintained product available at a great price. Ideal for resale or reuse.</p>
+          <button class="contact-btn" style="margin-top:1rem;">Chat with Seller</button>
+        </div>
+      `;
+    } else {
+      box.innerHTML = `<p>Product data not available. Please go back and try again.</p>`;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Report Grievance</title>
+    <link rel="stylesheet" href="Grievance.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Report Grievance</h1>
+        <form id="grievance-form" action="/submit-grievance" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="location">Location</label>
+            <input type="text" id="location" name="location" placeholder="Enter the location of the issue" required>
+
+            <label for="description">Description of Grievance</label>
+            <textarea id="description" name="description" rows="5" placeholder="Describe the issue in detail" required></textarea>
+
+            <label for="category">Category</label>
+            <select id="category" name="category" required>
+                <option value="">Select Category</option>
+                <option value="garbage">Garbage Overflow</option>
+                <option value="littering">Littering</option>
+                <option value="sewage">Sewage Issues</option>
+                <option value="sewage">Pitfalls</option>
+                <option value="other">Other</option>
+            </select>
+
+            <label for="file">Upload Supporting Photo (optional)</label>
+            <input type="file" id="file" name="file" accept="image/*">
+
+            <button type="submit">Submit Grievance</button>
+        </form>
+        <div class="footer">
+            &copy; 2024 City Grievance Portal
+        </div>
+    </div>
+    <script src="Grievance.js"></script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+/* General Reset */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* Navbar Styles */
+nav {
+    z-index: 10;
+    position: relative;
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-left: 35px;
+    position: relative; /* For dropdown positioning */
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.0rem;
+    padding: 10px 15px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+nav ul li a:hover {
+    background-color: #ffffff;
+    color: #32dc40;
+    border-radius: 5px;
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%; /* Positioned below the parent menu item */
+    left: 0;
+    background-color: rgb(247, 240, 240);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    color: rgb(255, 50, 4);
+    background-color: #f0e8e8;
+}
+
+/* Show Dropdown on Hover */
+nav ul li:hover .dropdown-content {
+    display: block;
+}
+
+
+/* Header Styles */
+header {
+    background-color: #1e8e8e;
+    color: white;
+    display: block;
+    justify-content:end;
+    align-items:end;
+    padding: 20px 40px;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);
+}
+
+header .logo h1 {
+    font-size: 1.6rem;
+    margin: 0;
+    font-weight: bold;
+}
+.blinking-text {
+    color: #0e0d0d;
+    font-size: 1.6rem;
+    animation: blink 2s infinite;
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Slider */
+.slider {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 400px;
+}
+
+.slider .slide {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.slider .slide img {
+    width: 100%;
+    height: 100%;
+    object-fit:fill;
+}
+
+.slider .slide-text {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1.5rem;
+}
+
+
+/* Display the first slide by default */
+.slider .slide:first-child {
+    display: block;
+}
+/* General Styles for News Ticker */
+.news-ticker {
+    background-color: #1e8e8e;
+    color: white;
+    font-size: .8rem;
+    padding: 1px 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden; /* Ensures content does not overflow */
+    text-align: center;
+}
+
+.news-ticker p {
+    display: inline-block;
+    padding-right: 100%; /* Ensures smooth scrolling */
+    white-space: nowrap;  /* Keeps the text in one line */
+    animation: scroll-left 65s linear infinite; /* Animation that scrolls text from right to left */
+}
+
+/* Keyframes for the Scrolling Animation */
+@keyframes scroll-left {
+    0% {
+        transform: translateX(100%); /* Starts from the right edge */
+    }
+    100% {
+        transform: translateX(-100%); /* Ends at the left edge */
+    }
+}
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px; /* Reduced padding for a thinner footer */
+    margin-top: 20px;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* Reduced gap between elements */
+}
+
+footer .contact-info h2 {
+    margin-bottom: 5px; /* Reduced bottom margin */
+    color: #ff9e1e; /* Highlighted orange color */
+    font-size: 1.2rem; /* Slightly smaller font size */
+}
+
+footer .contact-info p {
+    margin: 2px 0; /* Tighter spacing between contact lines */
+    line-height: 1.2; /* Reduced line height */
+    font-size: 0.9rem; /* Slightly smaller text */
+}
+
+footer .footer-note p {
+    margin: 0;
+    font-size: 0.8rem; /* Smaller font for the copyright notice */
+    color: #aaa;
+}
+@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    nav ul li {
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .news-ticker p {
+        font-size: 0.8rem;
+    }
+
+    .slider {
+        height: 250px;
+    }
+
+    .slide-text {
+        font-size: 1rem;
+    }
+}
+

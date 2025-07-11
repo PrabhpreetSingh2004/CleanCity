@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CleanCity Feedback Form</title>
+  <link rel="stylesheet" href="feedback.css">
+</head>
+<body>
+  <div class="feedback-container">
+    <h2>CleanCity Feedback Form</h2>
+    <form id="feedbackForm">
+      <label for="name">Full Name:</label>
+      <input type="text" id="name" name="name" placeholder="Your name..." required />
+
+      <label for="email">Email Address:</label>
+      <input type="email" id="email" name="email" placeholder="Your email..." required />
+
+      <label for="city">City / Location:</label>
+      <input type="text" id="city" name="city" placeholder="Your city..." required />
+
+      <label>How did you hear about CleanCity?</label>
+      <select name="source" required>
+        <option value="" disabled selected>Select one</option>
+        <option value="social">Social Media</option>
+        <option value="friend">Friend or Family</option>
+        <option value="volunteer">CleanCity Volunteer</option>
+        <option value="event">Attended Event</option>
+        <option value="other">Other</option>
+      </select>
+
+      <label>Which services have you used?</label>
+      <select name="services" multiple>
+        <option value="trash">Trash Collection</option>
+        <option value="recycle">Recycling Drive</option>
+        <option value="tree">Tree Plantation</option>
+        <option value="wte">Waste to Energy (WTE)</option>
+        <option value="awareness">Awareness Events</option>
+      </select>
+
+      <label for="feedback">Your Suggestions / Comments:</label>
+      <textarea id="feedback" name="feedback" rows="4" placeholder="We value your thoughts..."></textarea>
+
+      <label>Rate your overall experience:</label>
+      <div class="rating">
+        <input type="radio" id="star5" name="rating" value="5" required><label for="star5">&#9733;</label>
+        <input type="radio" id="star4" name="rating" value="4"><label for="star4">&#9733;</label>
+        <input type="radio" id="star3" name="rating" value="3"><label for="star3">&#9733;</label>
+        <input type="radio" id="star2" name="rating" value="2"><label for="star2">&#9733;</label>
+        <input type="radio" id="star1" name="rating" value="1"><label for="star1">&#9733;</label>
+      </div>
+
+      <button class="submit-btn" type="submit">Submit Feedback</button>
+    </form>
+  </div>
+  <script src="feedback.js"></script>
+</body>
+</html>
